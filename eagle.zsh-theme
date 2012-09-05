@@ -28,6 +28,8 @@ ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%} ➜"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%} ═"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
 
+alias gicons="echo 'LEGEND\n======\n✚ = Added\n✹ = Modified\n✖ = Deleted\n➜ = Renamed\n═ = Unmerged\n✭ = Untracked'"
+
 # Determine the time since last commit. If branch is clean,
 # use a neutral color, otherwise colors will vary according to time.
 function git_time_since_commit() {# {{{
