@@ -108,26 +108,6 @@ function todo_prompt() {
   fi
 }
 
-# Not yet working :(
-function notes_count() {
-  if [[ -z $1 ]]; then
-    local NOTES_PATTERN="TODO|FIXME|HACK";
-  else
-    local NOTES_PATTERN=$1;
-  fi
-  grep -ERn "\b($NOTES_PATTERN)\b" {app,config,lib,spec,test} 2>/dev/null | wc -l | sed 's/ //g'
-}
-
-# Not yet working :(
-function notes_prompt() {
-  local COUNT=$(notes_count $1);
-  if [ $COUNT != 0 ]; then
-    echo "$1: $COUNT";
-  else
-    echo "";
-  fi
-}
-
 PROMPT='%{%f%k%b%}
 %{%K{black}%(?,%{$fg[magenta]%}(^_^%),%F{red}(>_<%)) %F{green}%}%n%{%F{blue}%}@%{%F{cyan}%}%m%{%F{green}%} %{%F{yellow}%K{black}%}%~%{%F{green}%}$(git_prompt_info)%E%{%f%k%}
 %{%K{black}%}$(_prompt_char)%{%K{black}%} %#%{%f%k%} '
